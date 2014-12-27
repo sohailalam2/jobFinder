@@ -2,9 +2,10 @@
   "name": "JobFinder",
   "version": "1.0.0",
   "description": "The job finder application",
-  "main": "index.js",
+  "main": "private/server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node private/server.js"
+    "test": "mocha tests/server; karma start"
   },
   "author": "Sohail Alam",
   "license": "MIT",

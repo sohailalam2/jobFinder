@@ -6,10 +6,10 @@ var app = express();
 
 require('./jobs-service')(jobsData, app);
 
-app.set("views", __dirname);
+app.set("views", "../public");
 app.set("view engine", "jade");
 
-app.use(express.static(__dirname + '/public'));
+app.use(express.static('../public'));
 
 app.get("*", function(req, res) {
     res.render("index");

@@ -5,7 +5,7 @@
     "Sohail Alam <sohailalam2@hotmail.com>"
   ],
   "description": "The job finder application",
-  "main": "index.js",
+  "main": "private/server.js",
   "moduleType": [
     "amd",
     "node"
@@ -16,6 +16,7 @@
     "**/.*",
     "node_modules",
     "bower_components",
+    "public/lib",
     "test",
     "tests"
   ],

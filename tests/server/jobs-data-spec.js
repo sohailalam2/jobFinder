@@ -1,7 +1,7 @@
 var expect = require("chai").expect;
 var mongoose = require("mongoose");
-var jobModel = require("../../models/Job");
-var jobsData = require("../../jobs-data");
+var jobModel = require("../../private/models/Job");
+var jobsData = require("../../private/jobs-data");
 
 describe('get jobs', function() {
     var jobs;

@@ -18,12 +18,12 @@ var jobs = [{
 var connectDB = Promise.promisify(mongoose.connect, mongoose);
 var createJob = Promise.promisify(Job.create, Job);
 
-function findJob (query) {
+function findJobs (query) {
     return Promise.cast(Job.find(query).exec());
 }
 
 function seedJobs() {
-    return findJob({}).then(function(collection) {
+    return findJobs({}).then(function(collection) {
         if (collection.length === 0) {
             return Promise.map(jobs, function(job) {
                 return createJob(job);
@@ -41,6 +41,7 @@ function resetJobs(callback) {
 module.exports = {
     connectDB: connectDB,
     seedJobs: seedJobs,
-    findJob: findJob,
-    resetJobs: resetJobs
+    findJobs: findJobs,
+    resetJobs: resetJobs,
+    saveJob: createJob
 };

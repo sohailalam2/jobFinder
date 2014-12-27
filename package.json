@@ -4,7 +4,7 @@
   "description": "The job finder application",
   "main": "private/server.js",
   "scripts": {
-    "start": "node private/server.js"
+    "start": "node private/server.js",
     "test": "mocha tests/server; karma start"
   },
   "author": "Sohail Alam",

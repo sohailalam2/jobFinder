@@ -10,6 +10,7 @@
   "author": "Sohail Alam <sohailalam2@hotmail.com>",
   "license": "MIT",
   "dependencies": {
+    "aes-helper": "0.0.1",
     "bluebird": "^2.4.2",
     "body-parser": "^1.10.0",
     "express": "^4.10.6",

@@ -7,10 +7,17 @@ var app = express();
 
 require('./jobs-service')(jobsData, app);
 
-app.set("views", __dirname + '/views');
+var publicDir = '';
+var currentDirSplit = __dirname.split('\/');
+for(var count=0; count<currentDirSplit.length-1; count++){
+    publicDir += '/' + currentDirSplit[count];
+}
+publicDir += '/public'
+
+app.set("views", publicDir);
 app.set("view engine", "jade");
 
-app.use(express.static('../public'));
+app.use(express.static(publicDir));
 
 app.get("*", function(req, res) {
     res.render("index");

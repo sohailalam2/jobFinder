@@ -1,7 +1,15 @@
+/**
+ * 
+ * These are some of the helper function to manipulate the 
+ * Job database.
+ * 
+ */
+ 
 var mongoose = require("mongoose");
 var Promise = require("bluebird");
 var Job = mongoose.model('Job');
 
+// Some seed jobs for the database, so that we don't start empty
 var jobs = [{
         title: 'Sales Person',
         description: 'you will fight dragon'
@@ -15,13 +23,21 @@ var jobs = [{
 
 ];
 
+// Promisified Mongoose connect method
 var connectDB = Promise.promisify(mongoose.connect, mongoose);
+// Promisified Mongoose create method
 var createJob = Promise.promisify(Job.create, Job);
 
+/**
+ * Find jobs with a given query
+ */
 function findJobs (query) {
     return Promise.cast(Job.find(query).exec());
 }
 
+/**
+ * Helper function to seed the database with sample jobs
+ */
 function seedJobs() {
     return findJobs({}).then(function(collection) {
         if (collection.length === 0) {
@@ -32,6 +48,9 @@ function seedJobs() {
     });
 }
 
+/**
+ * Helper function to delete the jobs database
+ */
 function resetJobs(callback) {
     return new Promise(function(resolve, reject) {
         mongoose.connection.collections['jobs'].drop(resolve, reject);

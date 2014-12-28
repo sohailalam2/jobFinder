@@ -12,7 +12,7 @@ html
         script(type='text/javascript', src='app/app.js')
         script(type='text/javascript', src='app/jobs.js')
 
-    body(ng-app='app', style='margin-bottom:50px; padding-bottom:50px;')
+    body(ng-app='jobsApp', style='margin-bottom:50px; padding-bottom:50px;')
         div.container
             div(stype='padding:2px; margin: 2px;').jumbotron
                 h1 Job Finder
@@ -20,9 +20,11 @@ html
                 p The source code could be found at &nbsp;
                     a(href="https://github.com/sohailalam2/jobFinder").btn.btn-danger Github
             div.row
-                div(ng-controller='testController')
+                div(ng-controller='JobController')
                     div.col-md-6
                         h1.bg-primary.text-center Post a new job
+                        p.text-danger All new jobs will be deleted after 60 seconds!
+                        hr
                         form(ng-submit="submit()")
                             .form-group
                                 input.form-control(placeholder='Title', ng-model='title')
@@ -32,6 +34,8 @@ html
                                 button.btn.btn-primary(type='submit') Post Job
                     div.col-md-6
                         h1.bg-success.text-center Find a job today
+                        p.text-muted Some jobs are permanent, while other will go out in 60 seconds
+                        hr
                         a.list-group-item(href='#', ng-repeat='job in jobs')
                             h4.list-group-item-heading {{ job.title }}
                             p.list-group-item-text {{ job.description }}

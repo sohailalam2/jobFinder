@@ -1,1 +1,1 @@
-var app = angular.module('app', ['ngResource']);
+var jobsApp = angular.module('jobsApp', ['ngResource']);

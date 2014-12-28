@@ -3,7 +3,7 @@ describe('post job', function() {
     var postRequestJob;
     var newJob = {title: 'title', description: 'description'};
 
-    beforeEach(module('app'));
+    beforeEach(module('jobsApp'));
 
     it('should call /api/jobs with job data', inject(function($httpBackend, jobs) {
         $httpBackend.whenPOST('/api/jobs', function(data){

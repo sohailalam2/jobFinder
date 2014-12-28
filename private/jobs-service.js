@@ -1,3 +1,7 @@
+/**
+ * This is the jobs api service
+ */
+
 var bodyParser = require("body-parser");
 
 module.exports = function(db, app) {

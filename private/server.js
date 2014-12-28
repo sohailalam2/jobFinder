@@ -7,7 +7,7 @@ var app = express();
 
 require('./jobs-service')(jobsData, app);
 
-app.set("views", "../public");
+app.set("views", __dirname + '/views');
 app.set("view engine", "jade");
 
 app.use(express.static('../public'));

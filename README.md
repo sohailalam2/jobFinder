@@ -1,18 +1,39 @@
+# Job Finder (Demo)
+-------------------
 
-     ,-----.,--.                  ,--. ,---.   ,--.,------.  ,------.
-    '  .--./|  | ,---. ,--.,--. ,-|  || o   \  |  ||  .-.  \ |  .---'
-    |  |    |  || .-. ||  ||  |' .-. |`..'  |  |  ||  |  \  :|  `--, 
-    '  '--'\|  |' '-' ''  ''  '\ `-' | .'  /   |  ||  '--'  /|  `---.
-     `-----'`--' `---'  `----'  `---'  `--'    `--'`-------' `------'
-    ----------------------------------------------------------------- 
+This is a very simple getting started project that I created while learning many new web technologies.
+Special Thanks to *pluralsight* for the awesome tutorial *Building Web Apps with Node.js*
+
+## Technologies Involved
+
+This tutorial combines several emerging technologies -
+
+- Node.JS
+- Express
+- AngularJS
+- Promise API using bluebird
+- MongoDB (Mongoose)
+- BDD Testing using mocha, chai, karma, phantomjs, supertest
+- CI with Codeship
+- SCM with Git (Github)
+- Automatic deployment to Heroku using Codeship (https://morning-oasis-5150.herokuapp.com/)
+
+## How to run
+Although running JobFinder demo application should not be tough, you need to make some changes as described below:
+
+You will need to modify the ```private/server.js``` and update your database credentials.
+Also, you will need to export the following environment variables -
+
+**IP**                  -   This is the IP where the application will start listening on
+**PORT**                -   This is the PORT where the application will bind to
+**PRIVATE_PASSWORD**    -   This is the secret key that you will need to decrypt the encrypted database credentials
 
 
-Hi there! Welcome to Cloud9 IDE!
+Now run the application using the following steps -
 
-To get you started, create some files, play with the terminal,
-or visit http://docs.c9.io for our documentation.
-If you want, you can also go watch some training videos at
-http://www.youtube.com/user/c9ide.
+- Clone the git repo
+- Run the tests using ``` npm test ```
+- Run the application using ``` npm start ```
 
-Happy coding!
-The Cloud9 IDE team
+## Contact Me
+You can find me @me_sohailalam (Twitter) or https://linkedin.com/in/alamsohail (LinkedIn)

@@ -22,8 +22,8 @@ if (!PRIVATE_PASSWORD) {
     process.exit(-1);
 }
 
-var decodedUsername = aes.decrypt("6b8e11384ff1a6ee8d370dd6644d7db5", PRIVATE_PASSWORD);
-var decodedPassword = aes.decrypt("2b904803a06895640f7726a71bc1e234", PRIVATE_PASSWORD);
+var decodedUsername = aes.decrypt("a46b9f0d8f3be9d1717c65dca2620c4d", PRIVATE_PASSWORD);
+var decodedPassword = aes.decrypt("f02dd8e8f8766d440599c086c264ac3d", PRIVATE_PASSWORD);
 
 jobsData.connectDB('mongodb://' + decodedUsername + ':' + decodedPassword + '@dbh86.mongolab.com:27867/jobfinder')
     .then(function() {
